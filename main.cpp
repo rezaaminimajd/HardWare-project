@@ -90,10 +90,28 @@ void changeDifficulty() {
     }
 }
 
+void drawLED(int x, int y) {
+    //TODO Rez
+}
+
 void drawObstaclesOnLED() {
-    // TODO ShAli
+    for (int i = 0; i < COUNT_OF_OBSTACLE; ++i) {
+        int points[COUNT_OF_POINT_AN_OBJECT][2];
+        getAllPointsFromFirstPoint(obstacles[i].x, obstacles[i].y, points);
+        for (int j = 0; j < COUNT_OF_POINT_AN_OBJECT; ++j) {
+            drawLED(points[j][0], points[j][1]);
+        }
+    }
 }
 
 void drawCarOnLED() {
-    // TODO Rez
+    int points[COUNT_OF_POINT_AN_OBJECT][2];
+    getAllPointsFromFirstPoint(car.x, car.y, points);
+    for (int j = 0; j < COUNT_OF_POINT_AN_OBJECT; ++j) {
+        drawLED(points[j][0], points[j][1]);
+    }
 }
+
+
+
+
