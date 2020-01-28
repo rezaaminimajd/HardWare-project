@@ -44,11 +44,11 @@ void createRandomObstacles() {
 }
 
 void moveRight() {
-    // TODO ShAli
+    car.y++;
 }
 
 void moveLeft() {
-    // TODO ShAli
+    car.y--;
 }
 
 void getAllPointsFromFirstPoint(int x, int y, int allPoints[][2]) {
