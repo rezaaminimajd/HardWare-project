@@ -51,30 +51,16 @@ void moveLeft() {
     car.y--;
 }
 
-void getAllPointsFromFirstPoint(int x, int y, int allPoints[][2]) {
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 2; ++j) {
-            allPoints[i + j][0] = x + i;
-            allPoints[i + j][1] = y + j;
-        }
-    }
-}
 
 void checkForCollision() {
-    int car_x = car.x;
     int car_y = car.y;
-    int carPoints[COUNT_OF_POINT_AN_OBJECT][2];
-    getAllPointsFromFirstPoint(car_x, car_y, carPoints);
     for (int i = 0; i < COUNT_OF_OBSTACLE; ++i) {
         int obstacle_x = obstacles[i].x;
         int obstacle_y = obstacles[i].y;
-        int obstaclePoints[COUNT_OF_POINT_AN_OBJECT][2];
-        getAllPointsFromFirstPoint(obstacle_x, obstacle_y, obstaclePoints);
-        for (int j = 0; j < COUNT_OF_POINT_AN_OBJECT; ++j) {
-            for (int k = 0; k < COUNT_OF_POINT_AN_OBJECT; ++k) {
-                if (carPoints[k][0] == obstaclePoints[k][0] && carPoints[j][1] == obstaclePoints[j][1]) {
-                    end = true;
-                }
+        if (obstacle_x < CAR_LENGTH + OBSTACLE_LENGTH) {
+            if (obstacle_y <= car_y + 1 && obstacle_y >= car_y - 1) {
+                end = true;
+                return;
             }
         }
     }
