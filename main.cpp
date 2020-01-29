@@ -26,7 +26,7 @@ struct Obstacle {
 struct Obstacle obstacles[COUNT_OF_OBSTACLE];
 int gameMap[8][16];
 int gameSpeed = SPEED_EASY_MODE;
-bool end = false
+bool end = false;
 
 void setup() {
     // put your setup code here, to run once:
@@ -78,6 +78,14 @@ void changeDifficulty() {
 
 void drawLED(int x, int y) {
     //TODO Rez
+}
+void getAllPointsFromFirstPoint(int x, int y, int allPoints[][2]) {
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 2; ++j) {
+            allPoints[i + j][0] = x + i;
+            allPoints[i + j][1] = y + j;
+        }
+    }
 }
 
 void drawObstaclesOnLED() {

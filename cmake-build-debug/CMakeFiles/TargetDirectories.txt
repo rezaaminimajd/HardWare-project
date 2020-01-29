@@ -1,0 +1,3 @@
+/home/rez/CLionProjects/HardWare-project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/rez/CLionProjects/HardWare-project/cmake-build-debug/CMakeFiles/untitled.dir
+/home/rez/CLionProjects/HardWare-project/cmake-build-debug/CMakeFiles/edit_cache.dir
